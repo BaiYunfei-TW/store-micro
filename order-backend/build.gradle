@@ -34,10 +34,9 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.flywaydb:flyway-core')
     compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
-    compile('org.flywaydb:flyway-core:5.1.4')
-
     runtime('mysql:mysql-connector-java')
     compileOnly('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
@@ -51,7 +50,7 @@ dependencyManagement {
 }
 
 flyway {
-    url = 'jdbc:mysql://localhost:3306/shop-product?useUnicode=true&characterEncoding=UTF-8'
+    url = 'jdbc:mysql://localhost:3306/shop-order?useUnicode=true&characterEncoding=UTF-8'
     user = 'root'
     password = '123456'
 }
