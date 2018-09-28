@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableWebSecurity
 public class OrderBackendApplication {
 
     public static void main(String[] args) {
