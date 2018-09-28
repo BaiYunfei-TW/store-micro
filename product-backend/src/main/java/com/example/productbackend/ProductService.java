@@ -17,13 +17,7 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-//    public void checkOutOfAmount(List<OrderItem> orderItems) {
-//        orderItems.forEach(item -> {
-//            Integer productId = item.getOrderProduct().getProductId();
-//            Optional<Product> product = productRepository.findById(productId);
-//            if (!product.isPresent() || product.get().isOutOfAmount(item.getAmount())) {
-//                throw new OutOfAmountException();
-//            }
-//        });
-//    }
+    public Optional<Product> findById(Integer id) {
+        return productRepository.findById(id);
+    }
 }
