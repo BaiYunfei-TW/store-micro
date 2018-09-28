@@ -1,29 +1,28 @@
-package com.example.orderbackend;
+package com.example.orderbackend.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Transient;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
-@Embeddable
-public class OrderProduct {
-    @Transient
-    private Integer productId;
-    @Column(name = "product_price")
+public class Product {
+
+    private Integer id;
     private BigDecimal price;
-    @Column(name = "product_unit")
     private String unit;
-    @Column(name = "product_imgUrl")
+    private Integer totalAmount;
     private String imgUrl;
-    @Column(name = "product_name")
     private String name;
 
-    public Integer getProductId() {
-        return productId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public BigDecimal getPrice() {
@@ -42,6 +41,14 @@ public class OrderProduct {
         this.unit = unit;
     }
 
+    public Integer getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(Integer totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
     public String getImgUrl() {
         return imgUrl;
     }
@@ -50,13 +57,11 @@ public class OrderProduct {
         this.imgUrl = imgUrl;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-
+    public boolean isOutOfAmount(Integer amount) {
+        return totalAmount.compareTo(amount) < 0;
+    }
 }

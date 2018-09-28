@@ -1,9 +1,9 @@
-package com.example.orderbackend;
+package com.example.orderbackend.controller;
 
+import com.example.orderbackend.entity.Order;
+import com.example.orderbackend.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

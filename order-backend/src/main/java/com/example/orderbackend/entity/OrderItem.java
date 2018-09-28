@@ -1,4 +1,4 @@
-package com.example.orderbackend;
+package com.example.orderbackend.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
